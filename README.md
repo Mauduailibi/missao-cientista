@@ -62,14 +62,17 @@ Em produção isso fica no mesmo domínio da landing, por exemplo `https://missa
 
 ## Deploy (Vercel)
 
-O `vercel.json` já aponta o build para `frontend/dist` e encaminha `/api/*` para o Hono.
+O `vercel.json` gera o site em `dist/` (cópia do build do frontend) e encaminha `/api/*` para o Hono.
 
-1. Publique o repositório no GitHub.
-2. Em [vercel.com](https://vercel.com), importe o projeto.
-3. Use o nome `missao-cientista` se quiser o endereço `missao-cientista.vercel.app`.
-4. Deploy. Cada push na branch principal publica de novo.
+Na Vercel, em **Settings → General → Build and Deployment**:
 
-Não é necessário outro servidor para a API: site e `/api` saem no mesmo projeto.
+- **Root Directory:** vazio (a raiz do repositório, não `frontend`)
+- **Framework Preset:** Other
+- **Output Directory:** `dist`
+- **Build Command:** `pnpm build`
+- **Install Command:** `pnpm install`
+
+Se o preset Vite estiver ativo, ele procura `dist` na raiz e ignora `frontend/dist` — por isso o deploy quebrava. Depois de ajustar, faça um **Redeploy**.
 
 ## Realização
 
