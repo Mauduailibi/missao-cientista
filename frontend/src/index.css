@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f8f6f0;
+  --color-navy: #12294d;
+  --color-navy-muted: #3d5573;
+  --color-navy-soft: #5b7089;
+  --color-label: #7a8ca3;
+  --color-orange: #ef6a20;
+  --color-orange-shadow: #c7521a;
+  --color-yellow: #fbd24a;
+  --color-teal: #1e7a6b;
+  --color-sky: #5b8fb0;
+  --color-sky-mid: #4a7c9b;
+  --color-sky-light: #8fc0da;
+  --color-hero-glow: #e8f1f6;
+  --color-award-teal-bg: #f1f7f5;
+  --color-award-orange-bg: #fdf2ea;
+  --color-award-sky-bg: #eef4f8;
+  --color-footer-muted: #a9bfd4;
+  --color-footer-body: #dce7f1;
+  --color-inscricoes-muted: #c6d6e4;
+  --color-inscricoes-hint: #8fa8c0;
+  --color-regulamento-muted: #d6ede8;
+  --color-logo-well: #0e2140;
+  --color-partner-stripe-a: #edeae1;
+  --color-partner-stripe-b: #f5f2ea;
+  --color-partner-label: #8a93a0;
+
+  --font-display: "Baloo 2", cursive;
+  --font-sans: "Nunito Sans", system-ui, sans-serif;
+
+  --shadow-cta: 0 8px 0 var(--color-orange-shadow);
+  --shadow-cta-pressed: 0 6px 0 var(--color-orange-shadow);
+  --shadow-hero: 0 24px 60px color-mix(in srgb, var(--color-navy) 22%, transparent);
+  --shadow-photo: 0 20px 44px color-mix(in srgb, var(--color-navy) 16%, transparent);
+
+  --background-image-partner-stripe: repeating-linear-gradient(
+    135deg,
+    var(--color-partner-stripe-a) 0 10px,
+    var(--color-partner-stripe-b) 10px 20px
+  );
+
+  --animate-mcfloat: mcfloat 6s ease-in-out infinite;
+}
+
+@keyframes mcfloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.mobile-menu {
+  clip-path: circle(0% at calc(100% - 2.5rem) 2.15rem);
+  transition: clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.mobile-menu.is-open {
+  clip-path: circle(200% at calc(100% - 2.5rem) 2.15rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu {
+    clip-path: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  background: var(--color-cream);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-navy);
+}

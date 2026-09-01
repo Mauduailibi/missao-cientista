@@ -1,0 +1,14 @@
+{
+  "name": "missao-cientista",
+  "private": true,
+  "packageManager": "pnpm@11.21.0",
+  "scripts": {
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm --filter frontend build",
+    "lint": "pnpm --filter frontend lint",
+    "preview": "pnpm --filter frontend preview"
+  },
+  "dependencies": {
+    "hono": "^4.13.5"
+  }
+}

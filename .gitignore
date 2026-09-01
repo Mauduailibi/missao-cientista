@@ -1,0 +1,75 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.pnpm-store
+
+# Build
+dist
+dist-ssr
+build
+out
+*.tsbuildinfo
+
+# Vite / tooling caches
+.vite
+.cache
+.turbo
+.parcel-cache
+.eslintcache
+.oxlintcache
+.stylelintcache
+.verify
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment (keep templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Tests / coverage
+coverage
+*.lcov
+.nyc_output
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Local / secrets / certs
+*.local
+*.pem
+*.p12
+*.key
+
+# Deploy / hosting
+.vercel
+.netlify
+.wrangler
+.firebase
+*.firebase
