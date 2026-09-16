@@ -1,4 +1,4 @@
-import logo from '../assets/logo-missao-cientista.png'
+import logo from '../assets/logo-missao-cientista.webp'
 
 type LogoMarkProps = {
   className: string

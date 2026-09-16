@@ -6,9 +6,7 @@
     "dev": "pnpm --filter frontend dev",
     "build": "pnpm --filter frontend build && rm -rf dist && cp -R frontend/dist dist",
     "lint": "pnpm --filter frontend lint",
-    "preview": "pnpm --filter frontend preview"
-  },
-  "dependencies": {
-    "hono": "^4.13.5"
+    "preview": "pnpm --filter frontend preview",
+    "deploy:rules": "npx firebase-tools deploy --only firestore:rules,firestore:indexes"
   }
 }

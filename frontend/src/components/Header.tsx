@@ -1,13 +1,14 @@
 import { useEffect, useId, useState } from 'react'
+import { useFormStatus } from '../lib/formStatus'
 import { LogoMark } from './LogoMark'
 
 const navItems = [
-  { href: '#sobre', label: 'O evento' },
-  { href: '#atracoes', label: 'Atrações' },
-  { href: '#participar', label: 'Quem participa' },
-  { href: '#premiacao', label: 'Premiação' },
-  { href: '#local', label: 'Local' },
-  { href: '#contato', label: 'Contato' },
+  { href: '/#sobre', label: 'O evento' },
+  { href: '/#atracoes', label: 'Atrações' },
+  { href: '/#participar', label: 'Quem participa' },
+  { href: '/#premiacao', label: 'Premiação' },
+  { href: '/#local', label: 'Local' },
+  { href: '/#contato', label: 'Contato' },
 ]
 
 const itemAccents = [
@@ -19,9 +20,21 @@ const itemAccents = [
   'bg-orange',
 ] as const
 
-function InscricoesBadge() {
+function InscricoesBadge({ open }: { open: boolean }) {
+  const className =
+    'inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-[18px] py-[11px] text-[14px] font-extrabold whitespace-nowrap text-white'
+
+  if (open) {
+    return (
+      <a href="/inscricao" className={`${className} hover:bg-orange hover:text-white`}>
+        <span className="block size-2 rounded-full bg-yellow" />
+        Inscrições abertas
+      </a>
+    )
+  }
+
   return (
-    <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-[18px] py-[11px] text-[14px] font-extrabold whitespace-nowrap text-white">
+    <span className={className}>
       <span className="block size-2 rounded-full bg-yellow" />
       Inscrições em 15/09
     </span>
@@ -63,6 +76,7 @@ function MenuToggle({ open, onClick, controls }: { open: boolean; onClick: () =>
 export function Header() {
   const [open, setOpen] = useState(false)
   const menuId = useId()
+  const formOpen = useFormStatus() === 'open'
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -99,7 +113,7 @@ export function Header() {
       >
         <div className="mx-auto flex w-full max-w-[1200px] items-center gap-4 px-6 py-3 lg:gap-8 lg:px-10">
           <a
-            href="#topo"
+            href="/#topo"
             className="flex items-center gap-3"
             onClick={() => setOpen(false)}
           >
@@ -120,7 +134,7 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <InscricoesBadge />
+            <InscricoesBadge open={formOpen} />
           </nav>
           <div className="ml-auto lg:hidden">
             <MenuToggle open={open} onClick={() => setOpen((value) => !value)} controls={menuId} />
@@ -177,10 +191,10 @@ export function Header() {
           >
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-[13px] font-extrabold text-white">
               <span className="block size-2 rounded-full bg-yellow" />
-              Inscrições em 15/09
+              {formOpen ? 'Inscrições abertas' : 'Inscrições em 15/09'}
             </span>
             <a
-              href="#participar"
+              href={formOpen ? '/inscricao' : '/#participar'}
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center rounded-[14px] bg-orange px-6 py-4 text-[16px] font-extrabold text-white shadow-cta hover:translate-y-[2px] hover:text-white hover:shadow-cta-pressed"
             >

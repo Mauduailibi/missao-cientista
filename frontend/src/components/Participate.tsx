@@ -1,3 +1,5 @@
+import { useFormStatus } from '../lib/formStatus'
+
 const levels = [
   { label: 'Educação Infantil', dot: 'bg-teal' },
   { label: 'Ensino Fundamental', dot: 'bg-orange' },
@@ -5,6 +7,8 @@ const levels = [
 ]
 
 export function Participate() {
+  const isOpen = useFormStatus() === 'open'
+
   return (
     <section id="participar" className="bg-cream">
       <div className="mx-auto max-w-[1200px] px-6 py-[88px] lg:px-10">
@@ -41,16 +45,36 @@ export function Participate() {
               <span className="inline-block rounded-full bg-yellow px-4 py-[7px] font-display text-sm font-extrabold tracking-[0.12em] text-navy">
                 INSCRIÇÕES
               </span>
-              <h3 className="mt-5 mb-3 font-display text-[34px] leading-[1.03] font-extrabold lg:text-[42px]">
-                Abrem em <span className="text-yellow">15 de setembro</span>
-              </h3>
-              <p className="mt-0 mb-[26px] text-lg leading-[1.55] text-inscricoes-muted">
-                O formulário de inscrição será publicado aqui nesta página. Até lá, você já pode
-                conhecer o regulamento e preparar o projeto com a sua turma.
-              </p>
-              <span className="inline-flex items-center gap-2.5 rounded-[14px] border border-dashed border-white/40 bg-white/12 px-[26px] py-4 text-base font-extrabold text-white">
-                Formulário em breve
-              </span>
+              {isOpen ? (
+                <>
+                  <h3 className="mt-5 mb-3 font-display text-[34px] leading-[1.03] font-extrabold lg:text-[42px]">
+                    Estão <span className="text-yellow">abertas!</span>
+                  </h3>
+                  <p className="mt-0 mb-[26px] text-lg leading-[1.55] text-inscricoes-muted">
+                    Reúna sua equipe de até 5 estudantes, confira o regulamento e inscreva o projeto com o
+                    professor orientador.
+                  </p>
+                  <a
+                    href="/inscricao"
+                    className="inline-flex items-center rounded-[14px] bg-orange px-[26px] py-4 text-base font-extrabold text-white shadow-cta hover:translate-y-[2px] hover:text-white hover:shadow-cta-pressed"
+                  >
+                    Fazer inscrição
+                  </a>
+                </>
+              ) : (
+                <>
+                  <h3 className="mt-5 mb-3 font-display text-[34px] leading-[1.03] font-extrabold lg:text-[42px]">
+                    Abrem em <span className="text-yellow">15 de setembro</span>
+                  </h3>
+                  <p className="mt-0 mb-[26px] text-lg leading-[1.55] text-inscricoes-muted">
+                    O formulário de inscrição será publicado aqui nesta página. Até lá, você já pode
+                    conhecer o regulamento e preparar o projeto com a sua turma.
+                  </p>
+                  <span className="inline-flex items-center gap-2.5 rounded-[14px] border border-dashed border-white/40 bg-white/12 px-[26px] py-4 text-base font-extrabold text-white">
+                    Formulário em breve
+                  </span>
+                </>
+              )}
               <p className="mt-[22px] mb-0 text-[15px] text-inscricoes-hint">
                 Dúvidas? Escreva para{' '}
                 <a

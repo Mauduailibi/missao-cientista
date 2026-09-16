@@ -1,2 +1,5 @@
 packages:
   - frontend
+allowBuilds:
+  '@firebase/util': false
+  protobufjs: false
