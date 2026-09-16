@@ -30,7 +30,14 @@ export function Footer() {
               <a href="https://wa.me/5547997878533" className="text-white hover:text-yellow">
                 WhatsApp (47) 99787-8533
               </a>
-              <span className="font-semibold text-footer-muted">Instagram: em breve</span>
+              <a
+                href="https://www.instagram.com/missaocientista/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow"
+              >
+                Instagram @missaocientista
+              </a>
             </div>
           </div>
           <div>
@@ -44,7 +51,12 @@ export function Footer() {
         </div>
         <div className="mt-11 flex flex-col justify-between gap-4 border-t border-white/14 pt-[22px] text-sm text-inscricoes-hint sm:flex-row sm:gap-6">
           <span>Feira de Ciências Missão Cientista · 27 de outubro de 2026</span>
-          <span>Udesc Balneário Camboriú</span>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <span>Udesc Balneário Camboriú</span>
+            <a href="/admin" className="font-bold text-inscricoes-hint underline-offset-4 hover:text-yellow hover:underline">
+              Painel administrativo
+            </a>
+          </div>
         </div>
       </div>
     </footer>
