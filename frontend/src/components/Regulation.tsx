@@ -7,13 +7,17 @@ export function Regulation() {
             Regulamento da feira
           </h2>
           <p className="m-0 max-w-[640px] text-lg leading-[1.55] text-regulamento-muted">
-            Regras de participação, critérios de avaliação e orientações para os projetos. O
-            documento em PDF será disponibilizado aqui.
+            Regras de participação, critérios de avaliação e orientações para os projetos.
           </p>
         </div>
-        <span className="inline-flex shrink-0 items-center gap-2.5 rounded-[14px] border border-dashed border-white/45 bg-white/14 px-7 py-[18px] text-base font-extrabold text-white">
-          PDF em breve
-        </span>
+        <a
+          href="/regulamento-missao-cientista-2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center gap-2.5 rounded-[14px] border border-white/45 bg-white/14 px-7 py-[18px] text-base font-extrabold text-white transition-colors hover:bg-white/24"
+        >
+          Baixar regulamento (PDF)
+        </a>
       </div>
     </section>
   )
