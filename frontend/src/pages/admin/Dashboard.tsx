@@ -66,6 +66,7 @@ const colunasPlanilha: Coluna<InscricaoDoc>[] = [
   { header: 'Ciência Delas', width: 13, value: (item) => yesNo(item.cienciaDelas) },
   { header: 'Energia elétrica', width: 14, value: (item) => yesNo(item.energiaEletrica) },
   { header: 'Espaço especial', width: 36, wrap: true, value: (item) => item.espacoEspecial || 'Não' },
+  { header: 'Observações', width: 36, wrap: true, value: (item) => item.observacoes ?? '' },
   { header: 'Autoriza imagem', width: 15, value: (item) => yesNo(item.autorizaImagem) },
   { header: 'Resumo', width: 90, wrap: true, value: (item) => item.resumo },
 ]
@@ -251,6 +252,11 @@ function InscricoesTab({ canDelete }: { canDelete: boolean }) {
                 <Detail label="Ciência Delas">{yesNo(item.cienciaDelas)}</Detail>
                 <Detail label="Energia elétrica">{yesNo(item.energiaEletrica)}</Detail>
                 <Detail label="Espaço especial">{item.espacoEspecial || 'Não'}</Detail>
+                {item.observacoes && (
+                  <Detail label="Observações" wide>
+                    <p className="m-0 whitespace-pre-wrap">{item.observacoes}</p>
+                  </Detail>
+                )}
                 <Detail label="Autoriza imagem">{yesNo(item.autorizaImagem)}</Detail>
                 {canDelete && (
                   <div className="flex justify-end border-t border-navy/8 pt-4 md:col-span-2">

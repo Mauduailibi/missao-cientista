@@ -356,7 +356,7 @@ service cloud.firestore {
       return data.keys().hasOnly([
           'participantes', 'orientadorNome', 'orientadorEmail', 'orientadorTelefone',
           'instituicao', 'nivel', 'municipio', 'titulo', 'resumo', 'cienciaDelas',
-          'energiaEletrica', 'espacoEspecial', 'autorizaImagem', 'createdAt'
+          'energiaEletrica', 'espacoEspecial', 'observacoes', 'autorizaImagem', 'createdAt'
         ])
         && data.keys().hasAll([
           'participantes', 'orientadorNome', 'orientadorEmail', 'orientadorTelefone',
@@ -377,6 +377,7 @@ service cloud.firestore {
         && data.cienciaDelas is bool
         && data.energiaEletrica is bool
         && data.espacoEspecial is string && data.espacoEspecial.size() <= 1000
+        && (!('observacoes' in data) || (data.observacoes is string && data.observacoes.size() <= 1000))
         && data.autorizaImagem == true
         && data.createdAt == request.time;
     }

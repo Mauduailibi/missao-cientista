@@ -24,6 +24,7 @@ export type Inscricao = {
   cienciaDelas: boolean
   energiaEletrica: boolean
   espacoEspecial: string
+  observacoes?: string
   autorizaImagem: boolean
   createdAt: Timestamp | null
 }

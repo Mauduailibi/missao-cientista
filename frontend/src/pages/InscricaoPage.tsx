@@ -43,6 +43,7 @@ const emptyForm = {
   energiaEletrica: '' as YesNo | '',
   precisaEspaco: '' as YesNo | '',
   espacoEspecial: '',
+  observacoes: '',
   autorizaImagem: false,
 }
 
@@ -130,6 +131,7 @@ export default function InscricaoPage() {
         cienciaDelas: form.cienciaDelas === 'sim',
         energiaEletrica: form.energiaEletrica === 'sim',
         espacoEspecial: form.precisaEspaco === 'sim' ? form.espacoEspecial.trim() : '',
+        observacoes: form.observacoes.trim(),
         autorizaImagem: true,
         createdAt: serverTimestamp(),
       })
@@ -371,6 +373,15 @@ export default function InscricaoPage() {
               />
             </Field>
           )}
+          <Field label="Observações" htmlFor="observacoes">
+            <TextArea
+              id="observacoes"
+              value={form.observacoes}
+              maxLength={1000}
+              rows={4}
+              onChange={(event) => set('observacoes', event.target.value)}
+            />
+          </Field>
           <label className="flex cursor-pointer items-start gap-3 rounded-[14px] border border-navy/15 bg-cream px-5 py-4">
             <input
               type="checkbox"
