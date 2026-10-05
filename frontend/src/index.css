@@ -23,9 +23,6 @@
   --color-inscricoes-hint: #8fa8c0;
   --color-regulamento-muted: #d6ede8;
   --color-logo-well: #0e2140;
-  --color-partner-stripe-a: #edeae1;
-  --color-partner-stripe-b: #f5f2ea;
-  --color-partner-label: #8a93a0;
 
   --font-display: "Baloo 2", cursive;
   --font-sans: "Nunito Sans", system-ui, sans-serif;
@@ -34,12 +31,6 @@
   --shadow-cta-pressed: 0 6px 0 var(--color-orange-shadow);
   --shadow-hero: 0 24px 60px color-mix(in srgb, var(--color-navy) 22%, transparent);
   --shadow-photo: 0 20px 44px color-mix(in srgb, var(--color-navy) 16%, transparent);
-
-  --background-image-partner-stripe: repeating-linear-gradient(
-    135deg,
-    var(--color-partner-stripe-a) 0 10px,
-    var(--color-partner-stripe-b) 10px 20px
-  );
 
   --animate-mcfloat: mcfloat 6s ease-in-out infinite;
 }

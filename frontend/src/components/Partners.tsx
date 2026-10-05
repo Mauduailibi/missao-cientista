@@ -1,3 +1,11 @@
+import cnpq from '../assets/logo-cnpq.svg'
+import udesc from '../assets/logo-udesc.svg'
+
+const partners = [
+  { name: 'UDESC', logo: udesc },
+  { name: 'CNPq', logo: cnpq },
+]
+
 export function Partners() {
   return (
     <section id="parceiras" className="bg-cream">
@@ -15,16 +23,16 @@ export function Partners() {
           </a>
           .
         </p>
-        <div className="mt-9 grid grid-cols-2 gap-5 lg:grid-cols-4">
-          {Array.from({ length: 4 }, (_, i) => (
-            <div
-              key={i}
-              className="flex h-[110px] items-center justify-center rounded-2xl border border-navy/8 bg-partner-stripe font-mono text-xs tracking-[0.08em] text-partner-label"
+        <ul className="m-0 mt-9 grid list-none grid-cols-2 gap-5 p-0 sm:flex sm:flex-wrap">
+          {partners.map((partner) => (
+            <li
+              key={partner.name}
+              className="flex h-[140px] items-center justify-center rounded-2xl border border-navy/8 bg-white p-5 sm:w-[260px]"
             >
-              logo parceira
-            </div>
+              <img src={partner.logo} alt={partner.name} className="max-h-full max-w-full object-contain" />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
