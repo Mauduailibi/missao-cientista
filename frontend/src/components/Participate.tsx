@@ -51,7 +51,7 @@ export function Participate() {
                     Estão <span className="text-yellow">abertas!</span>
                   </h3>
                   <p className="mt-0 mb-[26px] text-lg leading-[1.55] text-inscricoes-muted">
-                    Reúna sua equipe de até 5 estudantes, confira o regulamento e inscreva o projeto com o
+                    Reúna sua equipe de até 6 estudantes, confira o regulamento e inscreva o projeto com o
                     professor orientador.
                   </p>
                   <a

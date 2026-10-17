@@ -44,12 +44,13 @@ service cloud.firestore {
     function validParticipants(list) {
       return list is list
         && list.size() >= 1
-        && list.size() <= 5
+        && list.size() <= 6
         && shortText(list[0], 200)
         && (list.size() < 2 || shortText(list[1], 200))
         && (list.size() < 3 || shortText(list[2], 200))
         && (list.size() < 4 || shortText(list[3], 200))
-        && (list.size() < 5 || shortText(list[4], 200));
+        && (list.size() < 5 || shortText(list[4], 200))
+        && (list.size() < 6 || shortText(list[5], 200));
     }
 
     function municipiosSC() {

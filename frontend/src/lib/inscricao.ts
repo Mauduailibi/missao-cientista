@@ -8,7 +8,7 @@ export const NIVEL_LABELS: Record<Nivel, string> = {
   medio: 'Ensino Médio',
 }
 
-export const MAX_PARTICIPANTES = 5
+export const MAX_PARTICIPANTES = 6
 export const MAX_RESUMO = 2500
 
 export type Inscricao = {
