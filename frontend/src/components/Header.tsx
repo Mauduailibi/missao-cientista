@@ -8,6 +8,7 @@ const navItems = [
   { href: '/#participar', label: 'Quem participa' },
   { href: '/#premiacao', label: 'Premiação' },
   { href: '/#local', label: 'Local' },
+  { href: '/#programacao', label: 'Programação' },
   { href: '/#contato', label: 'Contato' },
 ]
 
