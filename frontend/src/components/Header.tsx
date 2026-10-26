@@ -9,6 +9,7 @@ const navItems = [
   { href: '/#premiacao', label: 'Premiação' },
   { href: '/#local', label: 'Local' },
   { href: '/#programacao', label: 'Programação' },
+  { href: '/#trabalhos', label: 'Trabalhos' },
   { href: '/#contato', label: 'Contato' },
 ]
 
@@ -129,7 +130,7 @@ export function Header() {
               CIENTISTA
             </span>
           </a>
-          <nav className="ml-auto hidden items-center gap-7 text-[15px] font-bold text-navy lg:flex">
+          <nav className="ml-auto hidden items-center gap-5 text-[15px] font-bold text-navy lg:flex">
             {navItems.map((item) => (
               <a key={item.href} href={item.href} className="text-navy hover:text-orange">
                 {item.label}
@@ -175,7 +176,7 @@ export function Header() {
                 style={{ transitionDelay: open ? `${220 + index * 55}ms` : '0ms' }}
               >
                 <span
-                  className={`flex size-10 items-center justify-center rounded-xl font-display text-[15px] font-extrabold text-white ${itemAccents[index]}`}
+                  className={`flex size-10 items-center justify-center rounded-xl font-display text-[15px] font-extrabold text-white ${itemAccents[index % itemAccents.length]}`}
                 >
                   {String(index + 1).padStart(2, '0')}
                 </span>

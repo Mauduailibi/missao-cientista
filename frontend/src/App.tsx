@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { About } from './components/About'
 import { Attractions } from './components/Attractions'
 import { Awards } from './components/Awards'
+import { EventInfo } from './components/EventInfo'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
@@ -11,6 +12,7 @@ import { Participate } from './components/Participate'
 import { Partners } from './components/Partners'
 import { Regulation } from './components/Regulation'
 import { Schedule } from './components/Schedule'
+import { SelectedProjects } from './components/SelectedProjects'
 
 export default function App() {
   useEffect(() => {
@@ -30,6 +32,8 @@ export default function App() {
       <Awards />
       <Location />
       <Schedule />
+      <EventInfo />
+      <SelectedProjects />
       <Regulation />
       <Partners />
       <Footer />
